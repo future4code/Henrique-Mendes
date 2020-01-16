@@ -1,0 +1,28 @@
+*{
+    background-color: gray;
+    font-family: Matura MT Script Capitals;
+}
+button{
+    border-radius: 5px;
+    color: purple;
+    background-color: brown;
+    font-size: 25px;
+}
+h2{
+    text-align: left;
+    font-family: Chiller;
+    color: rgb(70, 184, 165);
+    font-size: 45px;
+    }
+a:visited {
+    color: purple;
+    background-color: brown;
+}
+table{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-family: Chiller;
+    color: rgb(83, 30, 30);
+}
