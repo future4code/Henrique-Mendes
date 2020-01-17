@@ -1,0 +1,37 @@
+*{
+    background-color: rgb(128, 165, 107);
+    font-family: 'Berlin Sans FB';
+}
+h1{
+    text-align: center;
+    color: rgb(93, 93, 182);
+    background-color: cornsilk;
+    font-family: 'Berlin Sans FB';
+}
+h2{
+    text-align: right;
+}
+#foto-perfil{
+    width: 10%;
+    height: 10%;
+    
+}
+footer.div{
+    background-color: darkgray;
+}
+.menu{
+	text-align: right;
+	background-color: rgb(172, 56, 124);
+	list-style: none;
+    display: inline-block;
+    border: double pink;
+    position: relative;
+}
+footer img{
+    width: 20px;
+    height: 20px;
+}
+.tabela{
+    border: double black;
+    border-radius: 5px;
+}
