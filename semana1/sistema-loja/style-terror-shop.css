@@ -1,0 +1,30 @@
+*{
+    background-color:grey;
+    font-family: Matura MT Script Capitals;
+}
+h1{
+    font-family: Chiller;
+    color: red;
+    text-align: center;
+    background-color: sienna;
+    font-size: 50px;
+}
+h2{
+    font-family: Chiller;
+    background-color: tomato;
+    text-align: center;
+    font-size: 40px;
+}
+.menu{
+    text-align: right;
+    background: red;
+    color: black;
+    margin: 20px 15px;
+    border: 10px double turquoise;
+    display: inline-block;
+    font-size: 20px;
+
+a:visited{
+    color: black;
+    background: red;
+}
