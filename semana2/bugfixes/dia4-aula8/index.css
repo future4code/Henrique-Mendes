@@ -72,14 +72,15 @@ div img {
     color: white;
 }
 
-p:first-of-type{
-    position: relative;
-    top: 200px;
-}
-
-#container-de-descricao>ol {
+#container-de-descricao ol{
     padding: 15px 0px;
 }
+
+div div div{
+    position: relative;
+    top: 120px;
+}
+
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -89,6 +90,16 @@ p:first-of-type{
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    position: relative;
+    left: 150px;
+
+}
+
+button{
+    text-align: center;
+    position: relative;
+    top: 150px;
+    right: 250px;
 }
 
 
