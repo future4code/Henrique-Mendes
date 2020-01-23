@@ -1,0 +1,136 @@
+.container{
+    display: grid;
+    width: 80vw;
+    height: 100vh;    
+    border: 1px solid black;
+    grid-template-columns: 3;
+    grid-template-rows: 7;
+    grid-row-gap: 3vh;
+    grid-column-gap: 3vw;
+    padding: 3vh 3vw;
+}
+
+.boxes{
+    border: black 1px solid;
+
+}
+
+#menu{
+    display: grid;
+    background-color: red;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#item1{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#item2{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#item3{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#item4{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#item5{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#item6{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#item7{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 2.5;
+    grid-row-start: 4;
+    grid-row-end: 7;
+}
+
+#item8{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 2.5;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 7;
+}
+
+#item9{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+#item10{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+#item11{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+.lista{
+    display: inline;
+    position: fixed right;
+}
+
+@media screen and (min-width 500px)
+{
+    #item1 {        
+        display: none;
+    }
+}
