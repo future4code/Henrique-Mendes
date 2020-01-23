@@ -1,0 +1,67 @@
+.header{
+    background-color: aqua;
+    padding-bottom: 3vh;
+}
+
+#icon{
+    display: inline;
+    font-family: fantasy;
+}
+
+#busca{
+    display: inline;
+    position: fixed flex-end;
+}
+
+.containermain{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    padding: 3vh 3vw;    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 1vh 1vw;
+    justify-content: stretch;
+    align-items: stretch;    
+}
+
+main>img{
+    width: 15vw;
+    height: 15vh;
+}
+
+#img1{
+    display: grid;
+    border: cadetblue solid 1px;
+    border-radius: 3%;
+    grid-area: 1/1/2/2;
+}
+
+#img2{
+    display: grid;
+    border: cadetblue solid 1px;
+    border-radius: 3%;
+    grid-area: 1/2/2/3;
+}
+
+#img3{
+    display: grid;
+    border: cadetblue solid 1px;
+    border-radius: 3%;
+    grid-area: 1/3/2/4;
+}
+
+#img4{
+    display: grid;
+    border: cadetblue solid 1px;
+    border-radius: 3%;
+    grid-area: 1/4/2/5;
+}
+
+footer{
+    background-color: aqua;
+}
+footer>p{
+    text-align: center;
+    font-size: 32px;
+}
