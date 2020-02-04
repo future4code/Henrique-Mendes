@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js" defer></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <input type="text" id="input">
+      <select name="diaDaSemana" id="diaDaSemana">
+        <option value="segunda">Segunda-Feira</option>
+        <option value="terca">Terça-Feira</option>
+        <option value="quarta">Quarta-Feira</option>
+        <option value="quinta">Quinta-Feira</option>
+        <option value="sexta">Sexta-Feira</option>
+        <option value="sabado">Sabado-Feira</option>
+        <option value="domingo">Domingo-Feira</option>
+      </select>
+      <button onclick="adicionarEvento">Adicionar evento</button>
+    </header>
+    <main id="main-container">
+      <div id="segunda-feira" class="dias">
+        Segunda-Feira
+        <ul>          
+        </ul>
+      </div>
+      <div id="terça" class="dias">
+        Terça-Feira
+      </div>
+      <div id="quarta" class="dias">
+        Quarta-Feira
+      </div>
+      <div id="quinta" class="dias">
+        Quinta-Feira
+      </div>
+      <div id="sexta" class="dias">
+        Sexta-Feira
+      </div>
+      <div id="sabado" class="dias">
+        Sabado
+      </div>
+      <div id="domingo" class="dias">
+        Domingo
+      </div>
+    </main>
+
+
+  </body>
+</html>
