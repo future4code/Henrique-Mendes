@@ -16,26 +16,24 @@
       <div>
         <form>
           <label for="titulo">Título:</label>
-          <input type="text" id="titulo" name="titulo">
-          <button>Enviar</button>
+          <input type="text" id="titulo" name="titulo">          
           <br>
           <label for="autor">Autor(a):</label>
-          <input type="text" id="autor" name="autor">
-          <button>Enviar</button>
+          <input type="text" id="autor" name="autor">          
           <br>
           <label for="tema">Tema:</label>
-          <input type="text" id="tema" name="tema">
-          <button>Enviar</button>
+          <input type="text" id="tema" name="tema">          
           <br>
           <label for="texto">Texto:</label>
-          <textarea type="text" id="texto" name="texto"></textarea>          
-          <button>Enviar</button>
+          <textarea type="text" id="texto" name="texto"></textarea>
+          <br> 
+          <button onclick="postarTexto">Criar</button>
         </form>
       </div>
-      <p>Titulo</p>
-      <p>Autor</p>
-      <p>Tema</p>
-      <p>Texto</p>
+      <p id="titulo-postado">Titulo:</p>
+      <p id="autor-postado">Autor:</p>
+      <p id="tema-postado">Tema:</p>
+      <p id="texto-postado">Texto:</p>
       
     </main>    
   </body>
