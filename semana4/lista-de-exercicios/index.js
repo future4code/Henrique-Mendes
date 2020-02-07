@@ -149,6 +149,72 @@ console.log(oiF4())
 
 //  ---------------------- Exercícios de Objetos ---------------------- 
 //  ---------------------- 1 ----------------------
+/* Array é uma variavel que armazena mais de uma informacao ao mesmo tempo em uma unica variavel.
+Devemos usar arrays para simplificar uma pool de informações do mesmo tema.
+Objeto é um conjunto de arrays. Ele serve para modelar uma grande quantidade de dados de maneira mais eficaz.
+*/
+
 //  ---------------------- 2 ----------------------
+
+/*
+function criaRetangulo (l1, l2){
+    const retangulo = {
+        largura: l1,
+        altura: l2,
+        perimetro: (2*(l1+l2)),
+        area: (l1*l2)
+    }
+    return largura, altura, perimetro, area
+}
+
+console.log(criaRetangulo(4,8))
+*/
+
 //  ---------------------- 3 ----------------------
+/*
+const filmeFavorito = {    
+    titulo: 'Lucy',
+    ano: 2014,
+    direto: 'Luc Madsson',
+    elenco: ["Scarlett Johansson", "Morgan Freeman"]
+}
+
+console.log('Venha assistir ao filme ', filmeFavorito.titulo, 'de ', filmeFavorito.ano, 'dirigido por ', filmeFavorito.direto, ' e estrelado por ', filmeFavorito.elenco)
+*/
+
 //  ---------------------- 4 ----------------------
+/*
+const pessoa1 = {
+    nome: 'Malu',
+    idade: 15,
+    email: 'jovem@velho.com',
+    endereco: 'R. do Bobo'
+}
+console.log(pessoa1)
+
+function anonimizarPessoa(){
+    ...pessoa1,
+    nome = 'ANÔNIMO'
+}
+
+console.log(anonimizarPessoa(Anka))
+*/
+
+//  ---------------------- Exercícios de Funções de array ----------------------
+//  ---------------------- 1 ----------------------
+/*
+const professores = [
+{ nome: "Pedro", idade: 20 },
+{ nome: "João", idade: 10 },
+{ nome: "Paula", idade: 12 },
+{ nome: "Artur", idade: 89 }
+]
+
+const apenasAdultos = professores.map((nome, index, array)) => {
+    if (idade >= 20){
+        return professores
+    }
+}
+
+console.log (apenasAdultos)
+*/
