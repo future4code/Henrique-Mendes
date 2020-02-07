@@ -83,7 +83,7 @@ while(i <= quantidadeDeNumerosPares) {
 */
 
 //  ---------------------- 4 ----------------------
-
+/*
 function tipoTriangulo (a, b, c){
     if (a === b && a === c){
         console.log('Equilatero')
@@ -95,10 +95,10 @@ function tipoTriangulo (a, b, c){
         console.log('Escaleno')
     }
 }
-
+*/
 //  ---------------------- 5 ----------------------
-
-function programa (a, b){
+/*
+function logica5 (a, b){
     if (a > b){        
         console.log( a, 'maior que ', b)
     } else {        
@@ -121,7 +121,34 @@ function programa (a, b){
     }
 }
 
-console.log(programa(5,10))
-
+console.log(logica5(5,10))
+*/
 
 //  ---------------------- Exercícios de Funções ---------------------- 
+//  ---------------------- 1 ----------------------
+//1. Escreva uma função que receba um `array` de números e imprima na tela o segundo maior e o segundo menor número. Em seguida, invoque essa função.
+/*
+function funcao1 (array){
+    array.sort()
+    console.log(array[array.length-2], ' é o segundo maior e o segundo menor é ', array[1])
+}
+const arrayFuncao = [5, 12, 1, 35, 511, 10]
+
+console.log(funcao1(arrayFuncao))
+*/
+
+//  ---------------------- 2 ----------------------
+//2. Escreva uma **função não nomeada** que faça um `alert("Hello Future4");`. Em seguida, invoque essa função.
+/*
+let oiF4 = function(){
+    alert('Hello Future4')
+}
+
+console.log(oiF4())
+*/
+
+//  ---------------------- Exercícios de Objetos ---------------------- 
+//  ---------------------- 1 ----------------------
+//  ---------------------- 2 ----------------------
+//  ---------------------- 3 ----------------------
+//  ---------------------- 4 ----------------------
