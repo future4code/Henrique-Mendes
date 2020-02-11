@@ -1,0 +1,5 @@
+.caixa-grande{
+    border: 1px solid black;
+    display: flexbox;    
+    align-items: center;
+}
