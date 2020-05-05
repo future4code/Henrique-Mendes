@@ -1,0 +1,299 @@
+### Exercicio 1
+
+1a - VARCHAR (255) eh utilizado para declarar esse elemento como uma string e o numero dentro dos parenteses corresponde ao numero total de caracteres que podem ser utilizados nesse elemento.
+DATE utilizado para declarar o campo do tipo data
+PRIMARY KEY eh declarado para identificar esse campo como um identificador desse bloco do banco. ele deve ser unico, logo sem haver repeticoes dele dentro do banco
+NOT NULL eh utilizado para declarar que esse campo nao pode ter valor null (ou undefined)
+
+```sh
+CREATE TABLE Actor (     id VARCHAR(255) PRIMARY KEY,     name VARCHAR (255) NOT NULL,     salary FLOAT NOT NULL,     birth_date DATE NOT NULL,  gender VARCHAR(6) NOT NULL );
+```
+
+1b - Com SHOW TABLES o programa me devolve todas as tabelas que eu possui dentro do meu Schemas
+Com SHOW DATABASES ele me retorna todos os Schemas que eu possuo
+```sh
+SHOW TABLES;
+SHOW DATABASES;
+```
+
+1c - nao consegui rodar o comando SHOW Actor
+```sh
+SHOW DATABASES
+DESCRIBE
+DESCRIBE SHOW Actors
+SHOW Actor
+```
+***
+### Exercicio 2
+
+2a - 
+```sh
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "002", 
+  "Glória Pires",
+  1200000,
+  "1963-08-23", 
+  "female"
+);
+```
+2b - Error Code: 1062. Duplicate entry '002' for key 'PRIMARY'
+Ha uma duplicata do PRIMARY key 002.
+Esse erro ocorre porque so pode haver uma primary key com um valor unico. Precisamos usar um valor unico para dada PK
+
+2c - 1. Error Code: 1136. Column count doesn't match value count at row 1
+A contagem de colunas não corresponde à contagem de valores na linha 1
+isso significa que os parametros passados nao correspondem com os paramentros esperados
+
+```sh
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "003", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+```
+
+2c - 2. Error Code: 1364. Field 'name' doesn't have a default value
+Código de erro: 1364. O campo 'name' não tem um valor padrão
+O valor de nome eh obrigatorio e esta faltando nos paramentros e no Values
+
+```sh
+INSERT INTO Actor (id, salary, birth_date, gender, name)
+VALUES(
+  "004",
+  400000,
+  "1949-04-18", 
+  "male",
+  "Ze da Pistola"
+);
+```
+
+2c - 3. Error Code: 1292. Incorrect date value: '1950' for column 'birth_date' at row 1
+Código do erro: 1292. Valor incorreto da data: '1950' para a coluna 'aniversario' na linha 1
+Isso significa que o formado do valor Date esta incorreto, no caso a falta das ""
+```sh
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "005", 
+  "Juliana Paes",
+  719333.33,
+  "1979-03-26", 
+  "female"
+);
+```
+
+```sh
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "007",
+  "Bárbara Raquel Paz",
+  200000,
+  "1974-10-17", 
+  "female"
+);
+
+INSERT INTO Actor (id, name, salary, birth_date, gender) 
+VALUES(
+"006",
+"José Mojica Marins",
+719333.33,
+"1936-03-13",
+"male" );
+```
+***
+### Exercicio 3
+3.a
+```sh
+SELECT *
+FROM Actor
+WHERE gender = "female"
+```
+3.b
+```sh
+SELECT salary
+FROM Actor
+WHERE name LIKE "%ram%"
+```
+3.c
+```sh
+SELECT *
+FROM Actor
+WHERE gender = "invalid"
+```
+O resultado eh o retorno de todos os campos(colubas) com o valor de null.
+Acredito que isso se da pelo fato de de definirmos os campos obrigatorios de nao poderem ser null
+
+3.d
+```sh
+SELECT id, name, salary
+FROM Actor
+WHERE salary <= 500
+```
+Nao aparece nenhum resultado pelo fato de todos terem um salary maior que 500
+
+3.e
+Error Code: 1054. Unknown column 'nome' in 'field list'
+Código de erro: 1054. Coluna desconhecida 'nome' na 'lista de campos'
+Isso significa que nao ha uma coluna com o nome de "nome", o correto eh "name"
+```sh
+SELECT id, name 
+from Actor 
+WHERE id = "002"
+```
+1 row(s) returned
+
+***
+### Exercicio 4
+
+4a - busque todas as informacoes dentro do Actor e os campos que possuam A ou J e que tenham no campo salary maior que 300.000
+
+4b - 
+```sh
+SELECT * FROM Actor
+WHERE name NOT LIKE "A%" AND salary > 350000
+```
+
+4c -
+```sh
+SELECT * FROM Actor
+WHERE name LIKE "g%" OR name LIKE "G%"
+```
+
+4d -
+```sh
+ SELECT * FROM Actor
+ WHERE (name LIKE "%a%" OR "%A%" OR "%g%" OR "%G%") AND salary BETWEEN 350000 AND 900000;
+ ```
+ 
+ ***
+ ### Exercicio 5
+ 5a - 
+ ```sh
+ CREATE TABLE Movie (
+id VARCHAR (255) PRIMARY KEY,
+name VARCHAR (255) UNIQUE NOT NULL,
+synopsis TEXT NOT NULL,
+release_date DATE NOT NULL,
+review INT NOT NULL
+);
+```
+ 
+ 5b - 
+ ```sh
+ INSERT INTO Movie (id, name, synopsis, release_date, review)
+VALUES(
+  "001", 
+  "Se Eu Fosse Você",
+  "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+  "2006/01/06", 
+  "7"
+);
+ ```
+ 
+ 5c - 
+ ```sh
+ INSERT INTO Movie (id, name, synopsis, release_date, review)
+VALUES(
+  "002", 
+  "Doce de mãe",
+  "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+  "2012/12/27", 
+  "10"
+);
+ ```
+ 
+ 5d - 
+  ```sh
+ INSERT INTO Movie (id, name, synopsis, release_date, review)
+VALUES(
+  "003", 
+  "Dona Flor e Seus Dois Maridos",
+  "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+  "2017/11/02", 
+  "8"
+);
+ ```
+ 
+ 5e - 
+ ```sh
+ INSERT INTO Movie (id, name, synopsis, release_date, review)
+VALUES(
+  "004", 
+  "As Melhores Coisas do Mundo",
+  "Junto com os amigos, um adolescente paulistano vive situações onde os medos, a pressão pelo sucesso e a relação com a família se manifestam de forma intensa.",
+  "2010/04/08", 
+  "9"
+);
+ ```
+ ***
+ ### Exercicio 6
+ 
+6a
+```sh
+SELECT id, name, review
+FROM Movie
+WHERE id = "003"
+```
+
+6b
+```sh
+SELECT name
+FROM Movie
+WHERE name = "Se Eu Fosse Você"
+```
+
+6c
+```sh
+SELECT id, title, synopsis 
+FROM Movie 
+WHERE rating > 7;
+```
+
+ ***
+ ### Exercicio 7
+ 
+ 7a
+```sh
+SELECT name
+FROM Movie
+WHERE name LIKE "%vida%";
+```
+
+ 7b
+```sh
+SELECT * 
+FROM Movie
+WHERE title LIKE "%TERMO DE BUSCA%" OR
+      synopsis LIKE "%TERMO DE BUSCA%";
+```
+
+ 7c
+```sh
+SELECT *
+FROM MOVIE
+WHERE release_date < "2020-05-04";
+```
+
+ 7d
+```sh
+SELECT * 
+FROM MOVIE
+WHERE release_date < "2020-05-04" AND 
+      (title LIKE "%TERMO DE BUSCA%" OR
+      synopsis LIKE "%TERMO DE BUSCA%") AND rating > 7;
+```
+
+
+
+
+
+
+
+
+
+
+
+
