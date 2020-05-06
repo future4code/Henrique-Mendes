@@ -1,0 +1,192 @@
+### Exercicio 1
+1a - O comando abaixo remove a coluna "salary" da tabela "Actors"
+```sh
+ALTER TABLE Actors DROP COLUMN salary;
+```
+1b - O comando abaixo muda o nome da coluna "gender" para "sex" do tipo VARCHAR (6) da tabela "Actors"
+```sh
+ALTER TABLE Actors CHANGE gender sex VARCHAR(6);
+```
+1c - O comando abaixo muda o tipo da coluna "gender" para VARCHAR(255)  da tabela "Actors"
+```sh
+ALTER TABLE Actors CHANGE gender gender VARCHAR(255);
+```
+1d
+```sh
+ALTER TABLE Actors CHANGE gender gender VARCHAR(100);
+```
+***
+### Exercicio 2
+2a
+```sh
+UPDATE Actor
+SET name = "Fernada Monteclaro"
+WHERE id = "003";
+```
+2b
+```sh
+UPDATE Actor
+SET name = "JULIANA PÃES"
+WHERE name = "Juliana Paes";
+```
+```sh
+UPDATE Actor
+SET name = "Juliana Paes"
+WHERE name = "JULIANA PÃES";
+```
+2c
+```sh
+UPDATE Actor
+SET name = "Fernada Monteclaro"
+WHERE id = "003";
+```
+2d
+Na aba Output eh apresentado uma mensagem de sucesso mas na resposta fala que 0 rows foram afetadas e houve 0 de mudancas
+```sh
+UPDATE Actor
+SET name = "Hallo"
+WHERE id = "008";
+```
+```sh
+0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0
+```
+***
+### Exercicio 3
+3a
+```sh
+DELETE FROM Actor
+WHERE name = "Fernanda Montenegro"
+```
+3b
+```sh
+DELETE FROM Actor
+WHERE gender = "male" AND salary > 1000000
+```
+***
+### EXERCICIO 4
+4a
+```sh
+SELECT MAX(salary)
+FROM Actor
+```
+4b
+```sh
+SELECT MIN(salary)
+FROM Actor
+```
+4c
+```sh
+SELECT COUNT(*)
+FROM Actor
+WHERE gender="female"
+```
+4d
+```sh
+SELECT SUM(salary)
+FROM Actor
+```
+***
+### EXERCICIO 5
+5a Sendo a query abaixo a minha ultimas, o resultado agrupa a contagem de todos os elementos da tabela pelas diferencas da coluna gender, entao temos 2 somas ao total sendo uma para male e outra female
+```sh
+SELECT COUNT(*), gender
+FROM Actor
+GROUP BY gender
+```
+5b
+```sh
+SELECT id, name
+FROM Actor
+ORDER BY name DESC;
+```
+5c
+```sh
+SELECT *
+FROM Actor
+ORDER BY salary ASC;
+```
+5d
+```sh
+SELECT *
+FROM Actor
+ORDER BY salary DESC LIMIT 3;
+```
+5e
+```sh
+SELECT AVG(salary), gender
+FROM Actor
+GROUP BY gender;
+```
+***
+### EXERCICIO 6
+6a
+```sh
+ALTER TABLE Movie ADD playing_limit_date DATE;
+```
+6b
+```sh
+ALTER TABLE Movie CHANGE review review FLOAT
+```
+6c
+Saiu de cartaz
+```sh
+UPDATE Movie
+SET playing_limit_date = "2002-02-22"
+WHERE id = "002"
+```
+Em cartaz
+```sh
+UPDATE Movie
+SET playing_limit_date = current_date()
+WHERE id = "003"
+```
+6d
+```sh
+DELETE FROM Movie 
+WHERE id = "001"
+```
+Resposta: 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0
+Apesar do Output te dado positivo, a resposta apresenta nenhuma mudanca em quaisquer linhas
+
+7a
+```sh
+SELECT  COUNT(*)  FROM Movie WHERE review>  7.5;
+```
+7b
+```sh
+SELECT AVG(review) FROM Movie;
+```
+7c
+```sh
+ELECT AVG(review) FROM Movie;
+```
+7d
+```sh
+SELECT COUNT(*) FROM Movie WHERE release_date < CURDATE();
+```
+7e
+```sh
+SELECT MAX(review) FROM Movie;
+```
+7f
+```sh
+SELECT MIN(review) FROM Movie;
+```
+
+8a
+```sh
+SELECT * FROM Movie ORDER BY title;
+```
+8b
+```sh
+SELECT * FROM Movie ORDER BY title LIMIT 5;
+```
+8c
+```sh
+SELECT * FROM Movie WHERE release_date < CURDATE() ORDER BY release_date DESC LIMIT 3;
+```
+8d
+```sh
+SELECT * FROM Movie 
+ORDER BY review DESC LIMIT 3;
+```
