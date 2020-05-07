@@ -1,0 +1,136 @@
+### Exercicio 1
+1a - Chave estrangeira eh uma chave utilizada emprestada de uma outra tabela para usar como parametro para de coneccao entre as tabelas e elas sao sempre PRIMARY KEY
+1b
+```sh
+INSERT INTO Rating (id, comment, rate, movie_id)
+VALUES (
+	"001",
+    "Nunca vi",
+    1,
+    "002"
+)
+```
+```sh
+
+INSERT INTO Rating (id, comment, rate, movie_id)
+VALUES (
+	"002",
+    "Um classico que nunca assiti",
+    6,
+    "003"
+)
+```
+```sh
+INSERT INTO Rating (id, comment, rate, movie_id)
+VALUES (
+	"003",
+    "A unica coisa boa que o Fiok fez",
+    8,
+    "004"
+)
+```
+```sh
+INSERT INTO Rating (id, comment, rate, movie_id)
+VALUES (
+	"004",
+    "Filme alternativo bonzao com explosoes",
+    9,
+    "005"
+)
+```
+1c - O erro apresentado explica que a FOREIGN KEY utilizada nao existe na tabela de referencia
+
+1d
+```sh
+ALTER TABLE Movie DROP COLUMN review;
+```
+1e - O erro apresentado explica que nao pode haver updates or delete se o item estiver com uma FOREIGN KEY em outra tabela
+```sh
+DELETE FROM Movie
+WHERE id = "002";
+```
+***
+### Exercicio 2
+2a - O comando abaixo cria uma tabela com apenas elementos referenciados vindo de duas outras tabelas distintas. Ha apenas 2 colunas sendo FOREIGN KEY ambas
+```sh
+CREATE TABLE MovieCast (
+actor_id VARCHAR (255),
+movie_id VARCHAR(255),
+FOREIGN KEY (actor_id) REFERENCES Actor(id),
+FOREIGN KEY (movie_id) REFERENCES Movie(id)
+);
+```
+2b
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES ( "002", "002")
+```
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES ( "003", "002")
+```
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES ( "007", "005");
+```
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES ("001", "005");
+```
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES ("001", "004");
+```
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES ("006", "003");
+```
+2c - A resposta de erro diz que nao consegue fazer a referenca para a FOREIGN KEY da tabela Movie. Nao indica que esse filme nao existe, mas apresenta o problema em qual tabela e em qual coluna nao consegue fazer a referencia.
+```sh
+INSERT INTO MovieCast (actor_id, movie_id)
+VALUES( "007", "001")
+```
+Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`sagan_henrique_db`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))
+
+2d
+Nao foi possivel deletar porque esse ator esta relacionado em outra tabela
+```sh
+DELETE FROM Actor
+WHERE id = "007";
+```
+Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`sagan_henrique_db`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_1` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))
+
+***
+### Exercicio 3
+3a A query faz a requisicao de leitura de todas as informacoes da tabela Movie e as interccoes entre ela e a tabela Rating onde as informacoes do movie id serao tambem usadas como FOREIG KEY na coluna movie_id na tabela Rating.
+O operador ON refere a qual item deve ser igual nas colunas para apresentar o resultado
+
+3b
+```sh
+SELECT name, movie_id, rate FROM Movie 
+JOIN Rating ON movie_id = Rating.movie_id;
+```
+OU
+```sh
+SELECT Movie.name as n, Movie.id as m_id, Rating.rate as r FROM Movie
+JOIN Rating ON Movie.id = Rating.movie_id;
+```
+***
+### Exercicio 4
+4a
+```sh
+SELECT m.id as movie_id, m.name, r.rate as rating, r.comment  as rating_comment FROM Movie m LEFT  JOIN Rating r ON m.id = r.movie_id;
+```
+4b
+```sh
+SELECT m.id as movie_id, m.title, mc.actor_id FROM Movie m RIGHT JOIN MovieCast mc ON mc.movie_id = m.id;
+```
+4c
+```sh
+SELECT AVG(r.rate), m.id, m.name FROM Movie m LEFT JOIN Rating r ON m.id = r.movie_id GROUP BY (m.id);
+```
+***
+### Exercicio 5
+```sh
+
+```
