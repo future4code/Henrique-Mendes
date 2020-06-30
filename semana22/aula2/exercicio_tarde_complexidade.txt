@@ -1,0 +1,22 @@
+1 - Complexidade O(n)
+A funcao em questoes de complexidade faz apenas um for para cada elemento do input
+
+2 - Complexidade O(n)
+Ha apenas um for para cada elemento do input: string
+
+3 - Complexidade O(1)
+Ha apenas a verificacao de os index existem e em seguida calcula o valor da matrix
+
+4 - Complexidade O(n²)
+
+5 - Mais performatico para menos performatico
+	3 - 1 - 2 - 4
+
+6 - Complexidade O(n)
+Ha apenas um for simples com os inputs
+
+7 - Complexidade O(1)
+Nao ha loop na funcao e os valores dos inputs nao mudam a velocidade de processamento das linhas
+
+8 - Complexidade copyArray O(n²)
+    Complexidade appendToNew O(n)

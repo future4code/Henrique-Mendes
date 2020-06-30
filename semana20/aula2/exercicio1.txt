@@ -1,0 +1,3 @@
+1a - Tudo Ok
+1b - Se receber um objeto vazio ira cair no if e sera mandado o erro do status 400 com a mensagem de erro.
+1c - 
